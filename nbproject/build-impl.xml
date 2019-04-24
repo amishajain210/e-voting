@@ -1442,7 +1442,11 @@ exists or setup the property manually. For example like this:
     <target name="-post-clean">
         <!-- Empty placeholder for easier customization. -->
         <!-- You can override this target in the ../build.xml file. -->
-   
+    </target>
+       <target name="use" description="Use the Task">
+        <taskdef name="helloworld" classname="HelloWorld" classpath="${/test/HelloWorld.java}"/>
+        <helloworld/>
+</target>
     <target depends="init,undeploy-clean,deps-clean,do-clean,check-clean,-post-clean" description="Clean build products." name="clean"/>
     <target depends="clean" description="Clean build products." name="clean-ear"/>
 </project>
