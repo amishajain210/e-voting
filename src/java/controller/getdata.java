@@ -5,7 +5,7 @@
  */
 package controller;
 
-import static com.sun.corba.se.spi.presentation.rmi.StubAdapter.request;
+
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import model.DataCon;
