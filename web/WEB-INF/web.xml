@@ -16,6 +16,30 @@
         <servlet-name>dash</servlet-name>
         <servlet-class>controller.dash</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>adminlogin</servlet-name>
+        <servlet-class>controller.adminlogin</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>admindash</servlet-name>
+        <servlet-class>controller.admindash</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>guideline</servlet-name>
+        <servlet-class>controller.guideline</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>login</servlet-name>
+        <servlet-class>controller.login</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>appeal</servlet-name>
+        <servlet-class>controller.appeal</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>picture</servlet-name>
+        <servlet-class>controller.picture</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>vote</servlet-name>
         <url-pattern>/Login_v9/vote</url-pattern>
@@ -31,6 +55,30 @@
     <servlet-mapping>
         <servlet-name>dash</servlet-name>
         <url-pattern>/dashboard/dash</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>adminlogin</servlet-name>
+        <url-pattern>/Login_v9/adminlogin</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>admindash</servlet-name>
+        <url-pattern>/lattes-template/admindash</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>guideline</servlet-name>
+        <url-pattern>/lattes-template/guideline</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>login</servlet-name>
+        <url-pattern>/Login_v9/login</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>appeal</servlet-name>
+        <url-pattern>/Login_v9/appeal</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>picture</servlet-name>
+        <url-pattern>/Login_v9/picture</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

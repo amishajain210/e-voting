@@ -5,6 +5,7 @@
  */
 package controller;
 
+import static com.sun.corba.se.spi.presentation.rmi.StubAdapter.request;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import model.DataCon;
@@ -35,4 +36,27 @@ public class getdata {
     ResultSet rs= d.getStatement().executeQuery(query);
     return rs;
     }
+     public static ResultSet type4() throws SQLException 
+    {
+      String query="select * from nominees;";
+     DataCon d=new DataCon();
+    ResultSet rs= d.getStatement().executeQuery(query);
+    return rs;
+    }
+     public static ResultSet type5() throws SQLException 
+    {
+      String query="select * from guidelines;";
+     DataCon d=new DataCon();
+    ResultSet rs= d.getStatement().executeQuery(query);
+    return rs;
+    }
+     public static ResultSet type6() throws SQLException 
+    {
+      String query="select * from student1;";
+     DataCon d=new DataCon();
+    ResultSet rs= d.getStatement().executeQuery(query);
+    return rs;
+    }
+     
+     
 }
