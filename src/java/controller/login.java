@@ -18,6 +18,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import model.DataCon;
 
 /**
@@ -93,6 +94,8 @@ public class login extends HttpServlet {
              if(pass.equals(password))
             {
                 request.setAttribute("name" , user ) ; 
+                // HttpSession session = request.getSession();
+           // session.setAttribute("attr", user );
                 RequestDispatcher dispatcher = request.getRequestDispatcher("rsdetails.jsp");
                 dispatcher.forward( request, response );
             }

@@ -50,7 +50,7 @@ public class dash extends HttpServlet {
              d.getStatement().executeUpdate("update votecount set votenumber=votenumber+1 where id='"+votes1[1]+"'");
              d.getStatement().executeUpdate("update student1 set vote=1 where id='"+roll+"';");
              session.invalidate();
-             d.close();
+            // d.close();
              out.println("<html><body><h1>Thank You for Voting! Your vote is submitted Successfully</h1>");
                      out.println("<br><a href='../index.jsp'> back </a>");
                      out.println("</body>");

@@ -153,16 +153,16 @@ function myFunction() {
 					<div class="column" style="background-color:#bbb; box-sizing: border-box;">
 					<table>
 						<tr>
-							<th>Name</th>
-							<th>Other details</th>
+							<th>Picture</th>
+							<th>Details</th>
 							<th>Status</th>
 						</tr>
                                                 <%  while(rs.next())
                                                 { %>
 						<tr>
-                                                    <td style="color:black"><b><%= rs.getString(1)%></b></td>
+                                                    <td><a href="showimage2?image=<%= rs.getString(2)%>" style="color: #0D0589 ; font-size: 20px; " > View </a></td>
                                        
-                                                    <td><label class="details">Roll :</label> <%= rs.getString("roll")%><br> <label class="details">Contact No. :</label> <%= rs.getInt(10)%><br><label class="details"> Email :</label> <%= rs.getString(3)%><br> <label class="details">Category :</label> <%= rs.getString(5)%><br> <label class="details">Course :</label> <%= rs.getString(6)%><br><label class="details"> What is Sac to you :</label> <%= rs.getString(11)%><br><label class="details"> Why you want to join Sac :</label> <%= rs.getString(12)%><br><label class="details"> Share your previous experience :</label> <%= rs.getString(13)%></td>
+                                                    <td><label class="details"><b>Name : </b></label> <b><%= rs.getString(1)%></b><br><label class="details">Roll :</label> <%= rs.getString("roll")%><br> <label class="details">Contact No. :</label> <%= rs.getInt(10)%><br><label class="details"> Email :</label> <%= rs.getString(3)%><br> <label class="details">Category :</label> <%= rs.getString(5)%><br> <label class="details">Course :</label> <%= rs.getString(6)%><br><label class="details"> What is Sac to you :</label> <%= rs.getString(11)%><br><label class="details"> Why you want to join Sac :</label> <%= rs.getString(12)%><br><label class="details"> Share your previous experience :</label> <%= rs.getString(13)%></td>
                                                     <td><label style="color:green">Accept</label>&nbsp;<input type="checkbox" name="accept1" value="<%= rs.getString(2)%>">&nbsp;
 								&nbsp;
                                                                 <label style="color: red">  Reject</label>&nbsp;<input type="checkbox" name="accept2" value="<%= rs.getString(2)%>">
@@ -240,7 +240,7 @@ else {%>
                             <form action="guideline" method="post">
                                 
 				
-                                <center><input type="text" name="guide"  style=" height: 100px; width: 50%; border-radius: 20px; font-size: 20px; border: 1px solid #0D0589; color : #0D0589; " placeholder="type here">
+                                <center><input type="text" name="guide"  style=" height: 100px; width: 50%; border-radius: 20px; font-size: 20px; border: 1px solid #0D0589; color : #0D0589; " >
                                     
                                     
                                     <br>

@@ -72,9 +72,11 @@ public class admindash extends HttpServlet {
             {
                 String j= confirm[i];
             PreparedStatement ps = d.getConnection().prepareStatement("update nominees set status= 'confirm' where roll= ? ;");
+            PreparedStatement pst=d.getConnection().prepareStatement("insert into votecount(id,votenumber) values(?,0)"); 
      // ps.setString(9,"confirm");
       ps.setString(1,j);
-
+         pst.setString(1,j);
+        pst.executeUpdate();
       // execute the java preparedstatement
       ps.executeUpdate();
             }

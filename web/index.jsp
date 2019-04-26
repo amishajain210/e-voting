@@ -1,5 +1,8 @@
+<%@page import="java.io.OutputStream"%>
+<%@page import="java.sql.Blob"%>
 <%@page import="controller.getdata"%>
 <%@page import="java.sql.ResultSet"%>
+
 <!DOCTYPE html>
 
 <html lang="en">
@@ -35,14 +38,16 @@ table {
   width: 100%;
 }
 th {
-  border: 1px solid #dddddd;
+  border: 1px #777 solid ;
   text-align: left;
   padding: 8px;
+  font-size: 18px;
   }
 
 td {
-  border: 1px solid #dddddd;
-  color: #0D0589;
+  border: 1px solid #777;
+  color:  #32383e ;
+  font-size: 18px;
   text-align: left;
   padding: 8px;
 }
@@ -65,7 +70,7 @@ tr:nth-child(even) {
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 					</button>
-					<a class="navbar-brand page-scroll" href="#page-top"><img src="images/logo1.jpg" alt="IIITB"></a>
+					<a class="navbar-brand page-scroll" href="#page-top"><img src="images/logo1.jpg" alt="IIITB" height="40" width="40"></a>
 				</div>
 				<!-- Collect the nav links, forms, and other content for toggling -->
 				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -121,6 +126,9 @@ tr:nth-child(even) {
 					</div>
                                    
                                      <%
+                                         Blob image = null;
+                                       byte[] imgData = null;
+                                         
                         ResultSet rs= getdata.type4(); 
                    
                     %>
@@ -136,11 +144,10 @@ tr:nth-child(even) {
 <table>
   <tr>
     <th>Name</th>
-    <th>Roll No.</th>
     <th>Course</th>
     <th>Category</th>
-    <th>Email id</th>
     <th>Vote Appeal</th>
+    <th>Picture</th>
     
   </tr>
   
@@ -148,13 +155,16 @@ tr:nth-child(even) {
   {
       while(rs.next())
           
-          {%>  <tr>
+          { 
+  //image = rs.getBlob(8);
+  //imgData = image.getBytes(8, (int) image.length());
+  //response.setContentType("image/gif");
+  //OutputStream o = response.getOutputStream();%>  <tr>
     <td><%= rs.getString(1)%></td>
-    <td><%= rs.getString(2)%></td>
-    <td><%= rs.getString("course")%></td>
+    <td><%= rs.getString(6)%></td>
     <td><%= rs.getString(5)%></td>
-    <td><%= rs.getString(3)%></td>
-    <td><%= rs.getString("appeal")%></td>
+    <td><%= rs.getString(7)%></td>
+    <td><a href="showimage?image=<%= rs.getString(2)%>" >click </a><!--<img src= "showimage" width="120px" height="150px" /> --></td>
    
   </tr>
   <% 

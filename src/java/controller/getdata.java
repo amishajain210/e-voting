@@ -24,21 +24,21 @@ public class getdata {
     }
     public static ResultSet type2() throws SQLException 
     {
-         String query="select * from nominees where gender='female';";
+         String query="select * from nominees where gender='female' and status='confirm';";
      DataCon d=new DataCon();
     ResultSet rs= d.getStatement().executeQuery(query);
     return rs;
     }
      public static ResultSet type3() throws SQLException 
     {
-         String query="select * from nominees where gender='male';";
+         String query="select * from nominees where gender='male' and status='confirm';";
      DataCon d=new DataCon();
     ResultSet rs= d.getStatement().executeQuery(query);
     return rs;
     }
      public static ResultSet type4() throws SQLException 
     {
-      String query="select * from nominees;";
+      String query="select * from nominees where status='confirm';";
      DataCon d=new DataCon();
     ResultSet rs= d.getStatement().executeQuery(query);
     return rs;

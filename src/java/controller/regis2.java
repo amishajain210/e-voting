@@ -8,7 +8,6 @@ package controller;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.PrintWriter;
-import static java.lang.System.out;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.logging.Level;
@@ -28,7 +27,7 @@ import model.DataCon;
  * @author amisha
  */
 @MultipartConfig(maxFileSize = 16177215)
-public class picture extends HttpServlet {
+public class regis2 extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -47,10 +46,10 @@ public class picture extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet picture</title>");            
+            out.println("<title>Servlet regis2</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet picture at " + request.getContextPath() + "</h1>");
+            out.println("<h1>Servlet regis2 at " + request.getContextPath() + "</h1>");
             out.println("</body>");
             out.println("</html>");
         }
@@ -85,12 +84,15 @@ public class picture extends HttpServlet {
         //processRequest(request, response);
          System.out.println("welcome again");
         InputStream inputStream = null; 
-        String id = request.getParameter("id");
         Part p = request.getPart("photo");
+        System.out.println(p);
+        String id= request.getParameter("photo1");
         System.out.println(id);
         response.setContentType("text/html");  
         PrintWriter out = response.getWriter();
-        
+       
+         //HttpSession session = request.getSession();
+         //String id=(String) session.getAttribute("attr");
         if(p!=null)
         {
         inputStream = p.getInputStream();
@@ -101,10 +103,10 @@ public class picture extends HttpServlet {
                 pst.setBlob(1, inputStream);
                 int i = pst.executeUpdate();  
               if(i>0){  
-                  request.setAttribute("name" , id ) ; 
-                RequestDispatcher dispatcher = request.getRequestDispatcher("rsdetails.jsp");
-                dispatcher.forward( request, response );
-                //session.invalidate();
+                  
+                  out.println("<html><h3>You are successfully registered..Login for further information</h3>");
+                  out.println("<br><a href='../index.jsp'> back </a></html>");
+               // session.invalidate();
                
                 //out.println("Record has been inserted");  
               }
@@ -115,6 +117,8 @@ public class picture extends HttpServlet {
                 Logger.getLogger(picture.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
+        
+        
     }
 
     /**

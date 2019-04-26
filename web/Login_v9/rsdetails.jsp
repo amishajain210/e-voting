@@ -50,7 +50,7 @@
                     <%  String state=null;
                         String roll=null;
                         String email =null;
-                        int cont=0;
+                        int cont= 0;
                         String c =null;
                         String n = null;
                         String x= null;
@@ -72,7 +72,7 @@
                            }
                            if(state.equals("waiting"))
                            {
-                              x = "waiting"; 
+                              x = " in waiting"; 
                            }
                            else if(state.equals("confirm")) 
                            { x= "confirmed";
@@ -83,7 +83,7 @@
                            }
                            %>
                     <br>
-                    <label><b> Name : </b><%= n %></label>
+                    <label style="color:  crimson; font-size: 17px;"><b> Name : </b><%= n %></label>
                         <br>
                         <label><b> Username : </b><%= roll%></label>
                         <br>	         
@@ -105,36 +105,42 @@
         <br>
                  <input type="text" name="appeal"  style=" height: 50px; width: 50%;font-size: 17px; color: #000000 ; border-radius: 20px; border : 1px solid #0D0589; background: #e9ecef" >
                  <input type="hidden" name="id" value="<%= roll%>">
-                 &nbsp; <button type="submit" style=" color: #000 ; background : lightpink ;
+                 &nbsp; <button type="submit" style=" color: #000 ; background : limegreen ;
      border: 1px black solid;
     border-radius: 3px;
     font-size: 18x;
-    padding: 10px 15px;" > Ok </button>
+    padding: 10px 15px;" onclick="alert('Appeal updated'); location='rsdetails.jsp';" > Ok </button>
     </form>
 </div>  
                  <br>
                  <br>
 <div>
     <form action="picture" method="post" enctype="multipart/form-data" >
-        <h5> <b>Upload Picture</b></h5>
+        <h5> <b>Update Picture</b></h5>
+                 
+                 <label>Note : File size must be less than 4MB</label>
                  <br>
+                 
                  <input type="file" name="photo" style="border : 1px black solid;"  >
+                  <input type="hidden" name="id" value="<%= roll%>">
                  <br>
                  <br>
                  <button type="submit" style=" color: #fff ;  background : limegreen ;
      border: 1px black solid;
     border-radius: 3px;
     font-size: 12x;
-    padding: 5px 7px;" > Upload </button>
+    padding: 5px 7px;" onclick="alert('Picture updated'); location='rsdetails.jsp';"  > Upload </button>
     </form>
-</div>                                  
-       	 	
+</div>   
+                 <br>
+                 <br>
+                 <a href="../index.jsp" style="float: right ;font-size: 18px; color: red "> Logout</a>
 		</div>
 	</div>
 	
 
 
-	<div id="dropDownSelect1"></div>
+	
 	
 <!--===============================================================================================-->
 	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>

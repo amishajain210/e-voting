@@ -40,6 +40,18 @@
         <servlet-name>picture</servlet-name>
         <servlet-class>controller.picture</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>showimage</servlet-name>
+        <servlet-class>controller.showimage</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>regis2</servlet-name>
+        <servlet-class>controller.regis2</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>showimage2</servlet-name>
+        <servlet-class>controller.showimage2</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>vote</servlet-name>
         <url-pattern>/Login_v9/vote</url-pattern>
@@ -79,6 +91,18 @@
     <servlet-mapping>
         <servlet-name>picture</servlet-name>
         <url-pattern>/Login_v9/picture</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>showimage</servlet-name>
+        <url-pattern>/showimage</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>regis2</servlet-name>
+        <url-pattern>/Login_v9/regis2</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>showimage2</servlet-name>
+        <url-pattern>/lattes-template/showimage2</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
