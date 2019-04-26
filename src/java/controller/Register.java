@@ -46,7 +46,7 @@ public class Register extends HttpServlet
         String g= request.getParameter("gender");
         String pa=request.getParameter("pass");
         String c=request.getParameter("course");
-        int a = Integer.parseInt(request.getParameter("contact"));
+        String a = request.getParameter("contact");
         String sac =request.getParameter("sac");
         String join =request.getParameter("join");
         String exp =request.getParameter("experience");
@@ -70,7 +70,7 @@ public class Register extends HttpServlet
          pst.setString(4,pa);
          pst.setString(5,g);
          pst.setString(6,c);
-         pst.setInt(7,a);
+         pst.setString(7,a);
          pst.setString(8,sac);
          
          pst.setString(9,join);

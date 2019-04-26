@@ -33,6 +33,7 @@
   background-color: #fff;
   border-collapse: collapse;
   width: 100%;
+  
 }
 th {
   border: 1px solid #dddddd;
@@ -61,6 +62,7 @@ color : #fff;
 .details{
    /* color: #0D0589; */
    color: #000;
+   text-align: justify;
 }
 #more {display: none;}
 	</style>
@@ -154,15 +156,17 @@ function myFunction() {
 					<table>
 						<tr>
 							<th>Picture</th>
-							<th>Details</th>
-							<th>Status</th>
+							<th width="60%">Details</th>
+							<th width="20%">Status</th>
 						</tr>
                                                 <%  while(rs.next())
                                                 { %>
 						<tr>
                                                     <td><a href="showimage2?image=<%= rs.getString(2)%>" style="color: #0D0589 ; font-size: 20px; " > View </a></td>
                                        
-                                                    <td><label class="details"><b>Name : </b></label> <b><%= rs.getString(1)%></b><br><label class="details">Roll :</label> <%= rs.getString("roll")%><br> <label class="details">Contact No. :</label> <%= rs.getInt(10)%><br><label class="details"> Email :</label> <%= rs.getString(3)%><br> <label class="details">Category :</label> <%= rs.getString(5)%><br> <label class="details">Course :</label> <%= rs.getString(6)%><br><label class="details"> What is Sac to you :</label> <%= rs.getString(11)%><br><label class="details"> Why you want to join Sac :</label> <%= rs.getString(12)%><br><label class="details"> Share your previous experience :</label> <%= rs.getString(13)%></td>
+                                                    <td style="text-align:justify"><label class="details"><b>Name : </b></label> <b><%= rs.getString(1)%></b><br><label class="details">Roll :</label> <%= rs.getString("roll")%><br> 
+                                                        <label class="details">Contact No. :</label> <%= rs.getString(13)%><br><label class="details"> 
+                                                            Email :</label> <%= rs.getString(3)%><br> <label class="details">Category :</label> <%= rs.getString(5)%><br> <label class="details">Course :</label> <%= rs.getString(6)%><br><label class="details"> What is Sac to you :</label> <%= rs.getString(10)%><br><label class="details"> Why you want to join Sac :</label> <%= rs.getString(11)%><br><label class="details"> Share your previous experience :</label> <%= rs.getString(12)%></td>
                                                     <td><label style="color:green">Accept</label>&nbsp;<input type="checkbox" name="accept1" value="<%= rs.getString(2)%>">&nbsp;
 								&nbsp;
                                                                 <label style="color: red">  Reject</label>&nbsp;<input type="checkbox" name="accept2" value="<%= rs.getString(2)%>">

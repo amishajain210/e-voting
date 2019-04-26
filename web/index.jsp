@@ -91,7 +91,7 @@ tr:nth-child(even) {
 							<a class="page-scroll" href="#guidelines"><b>Important Guidelines</b></a>
 						</li>
 						<li>
-							<a class="page-scroll" href="result/result.jsp"><b>Results</b></a>
+							<a class="page-scroll" href="result/newjsp.jsp"><b>Results</b></a>
 						</li>
 						<li>
 							<a class="page-scroll" href="#contact"><b>Contact Us</b></a>
@@ -163,7 +163,11 @@ tr:nth-child(even) {
     <td><%= rs.getString(1)%></td>
     <td><%= rs.getString(6)%></td>
     <td><%= rs.getString(5)%></td>
-    <td><%= rs.getString(7)%></td>
+  <%  if(rs.getString(7)!=null){%>
+    <td><%=rs.getString(7)%></td>
+  <%} 
+else{%>
+    <td>-</td><%}%>
     <td><a href="showimage?image=<%= rs.getString(2)%>" >click </a><!--<img src= "showimage" width="120px" height="150px" /> --></td>
    
   </tr>

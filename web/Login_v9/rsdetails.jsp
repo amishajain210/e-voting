@@ -50,7 +50,7 @@
                     <%  String state=null;
                         String roll=null;
                         String email =null;
-                        int cont= 0;
+                        String cont=null;
                         String c =null;
                         String n = null;
                         String x= null;
@@ -66,7 +66,7 @@
                           state= rs.getString(9);
                           roll = rs.getString(2);
                           email = rs.getString(3);
-                           cont = rs.getInt(10);
+                           cont = rs.getString(13);
                            c = rs.getString(6);
                            n =rs.getString(1);
                            }
